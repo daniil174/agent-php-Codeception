@@ -141,7 +141,7 @@ class agentPHPCodeception extends \Codeception\Platform\Extension
         $arrayWithParams = $e->getTest()->getMetadata()->getCurrent();
         if (array_key_exists(self::EXAMPLE_JSON_WORD, $arrayWithParams)) {
             $exampleParams = $arrayWithParams[self::EXAMPLE_JSON_WORD];
-            $stringWithParams = json_encode($exampleParams);
+            $stringWithParams = substr(json_encode($exampleParams), 0, 900);
             $stringWithParams = ' (' . $stringWithParams . ')';
         }
 
